@@ -19,6 +19,9 @@
 @property (nonatomic) BOOL running;
 @property (nonatomic) dispatch_queue_t queue;
 @property (nonatomic, strong) NSMutableDictionary *examinedDeadCells;
+@property (nonatomic) NSInteger diedCount;
+@property (nonatomic) NSInteger bornCount;
+
 @end
 
 
@@ -71,9 +74,10 @@
 }
 
 -(void)killAllCells{
-    [self stop];
+//    [self stop];
     [self.cells removeAllObjects];
     [self.evolvedCells removeAllObjects];
+
 }
 
 -(void)start{
@@ -287,8 +291,8 @@
 
 
 //Any live cell with fewer than two live neighbours dies, as if caused by under-population.
--(BOOL)cellPassesRule1:(VWWGOLCell*)cell{
-    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
+-(BOOL)cellPassesRule1:(VWWGOLCell*)cell withNeighborCells:(NSArray*)neighborCells{
+//    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
     if(neighborCells.count < 2){
 #if defined(VWW_VERBOSE_LOGGING)
         NSLog(@"%@ died from rule 1. %d (<2)", cell, neighborCells.count);
@@ -300,8 +304,8 @@
 }
 
 //Any live cell with two or three live neighbours lives on to the next generation.
--(BOOL)cellPassesRule2:(VWWGOLCell*)cell{
-    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
+-(BOOL)cellPassesRule2:(VWWGOLCell*)cell withNeighborCells:(NSArray*)neighborCells{
+//    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
     if(neighborCells.count == 2 || neighborCells.count == 3){
         return YES;
     }
@@ -313,8 +317,8 @@
 }
 
 //Any live cell with more than three live neighbours dies, as if by overcrowding.
--(BOOL)cellPassesRule3:(VWWGOLCell*)cell{
-    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
+-(BOOL)cellPassesRule3:(VWWGOLCell*)cell withNeighborCells:(NSArray*)neighborCells{
+//    NSArray *neighborCells = [self getLivingNeighborCellsFromCell:cell];
     if(neighborCells.count > 3){
 #if defined(VWW_VERBOSE_LOGGING)
         NSLog(@"%@ died from rule 3. %d (>3)", cell, neighborCells.count);
@@ -341,19 +345,22 @@
 
 -(void)evolveCell:(VWWGOLCell*)cell{
     [self.evolvedCells setObject:cell forKey:cell.key];
+    self.bornCount++;
 }
 
 
 
 -(void)processLivingCells{
-    
+    NSArray *neighborCells;
     for(VWWGOLCell *cell in self.cells.allValues){
-        //VWWGOLCell *cell = self.cells[index];
-        
-        if([self cellPassesRule1:cell] == YES &&
-           [self cellPassesRule2:cell] == YES &&
-           [self cellPassesRule3:cell] == YES){
+        neighborCells = [self getLivingNeighborCellsFromCell:cell];
+        if([self cellPassesRule1:cell withNeighborCells:neighborCells] == YES &&
+           [self cellPassesRule2:cell withNeighborCells:neighborCells] == YES &&
+           [self cellPassesRule3:cell withNeighborCells:neighborCells] == YES){
             [self evolveCell:cell];
+        }
+        else{
+            self.diedCount++;
         }
     }
 }
@@ -403,10 +410,11 @@
     dispatch_async(self.queue, ^{
         
         @autoreleasepool {
-    
-//#if defined(VWW_VERBOSE_LOGGING)
+            self.diedCount = 0;
+            self.bornCount = 0;
+#if defined(VWW_VERBOSE_LOGGING)
             NSLog(@"---------- Evolving a generation");
-//#endif
+#endif
             [self.evolvedCells removeAllObjects];
             [self processLivingCells];
             [self processDeadCells];
@@ -425,6 +433,7 @@
         if(self.running == NO) return;
         dispatch_sync(dispatch_get_main_queue(), ^{
             [self.delegate renderCells];
+            [self.delegate cellsThatDiedCount:self.diedCount cellsBornCount:self.bornCount];
 //            NSLog(@"");
         });
         [self processTimer];

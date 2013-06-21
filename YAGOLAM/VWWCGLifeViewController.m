@@ -22,6 +22,13 @@ static float kInitialFrequency = 0.1;
 @property (strong) IBOutlet NSButton *generateButton;
 @property (strong) IBOutlet NSSlider *frequencySlider;
 @property (nonatomic) float generateFrequency;
+@property (weak) IBOutlet NSTextField *generationsCountLabel;
+@property (weak) IBOutlet NSTextField *diedCountLabel;
+@property (weak) IBOutlet NSTextField *bornCountLabel;
+
+@property (nonatomic) NSInteger generationsCount;
+@property (nonatomic) NSInteger diedCount;
+@property (nonatomic) NSInteger bornCount;
 @end
 
 @implementation VWWCGLifeViewController
@@ -45,13 +52,19 @@ static float kInitialFrequency = 0.1;
     self.life = [[VWWGOLLife alloc]initWithWidth:kGOLWidth height:kGOLHeight];
     self.life.delegate = self;
     self.generateFrequency = kInitialFrequency;
-//    self.frequencySlider.value = self.generateFrequency;
-    self.startButton.hidden = YES;
+    self.frequencySlider.floatValue = self.generateFrequency;
+//    self.startButton.hidden = YES;
+    
+    [self updateLabels];
 }
 
 
 
-
+-(void)updateLabels{
+    self.generationsCountLabel.stringValue = [NSString stringWithFormat:@"%ld", self.generationsCount];
+    self.diedCountLabel.stringValue =  [NSString stringWithFormat:@"%ld", self.diedCount];
+    self.bornCountLabel.stringValue =  [NSString stringWithFormat:@"%ld", self.bornCount];
+}
 
 #pragma mark IBActions
 
@@ -86,10 +99,13 @@ static float kInitialFrequency = 0.1;
     }
     
     [self renderCells];
-    self.startButton.hidden = NO;
+//    self.startButton.hidden = NO;
     NSLog(@"added %ld cells. Actual count:%ld", requiredCellCount, self.life.cells.count);
 }
 
+- (IBAction)frequencySliderAction:(NSSlider*)sender {
+    self.generateFrequency = sender.floatValue;
+}
 
 
 //- (IBAction)frequencySliderValueChanged:(UISlider*)sender {
@@ -105,7 +121,10 @@ static float kInitialFrequency = 0.1;
 - (IBAction)clearButtonAction:(id)sender {
     [self.life killAllCells];
     [self renderCells];
-
+    self.generationsCount = 0;
+    self.diedCount = 0;
+    self.bornCount = 0;
+    [self updateLabels];
 }
 
 
@@ -133,6 +152,15 @@ static float kInitialFrequency = 0.1;
     [self.life addCell:cell];
     [self renderCells];
 }
+
+-(void)cellsThatDiedCount:(NSInteger)diedCellCount cellsBornCount:(NSInteger)cellBornCount{
+    self.generationsCount++;
+    self.diedCount += diedCellCount;
+    self.bornCount += cellBornCount;
+    [self updateLabels];
+}
+
+
 
 
 @end

@@ -54,26 +54,8 @@
     CGFloat red, green, blue, alpha;
     CGContextRef context = [[NSGraphicsContext currentContext] graphicsPort];
 
-    //    for(NSInteger x = 0; x < self.physics.width; x++){
-    //        for(NSInteger y = 0; y < self.physics.height; y++){
-    //            VWWGOLCell *cell = [self.physics cellAtIndex:y + self.physics.width * x];
-    //            if(cell){
-    //                [cell.color getRed:&red green:&green blue:&blue alpha:&alpha];
-    //                CGContextSetRGBFillColor(context, red, green, blue, alpha);
-    //            }
-    //            else{
-    //                CGContextSetRGBFillColor(context, 0.0, 0.0, 0.0, 1.0);
-    //            }
-    //
-    //            CGFloat rectX = cellWidth * x;
-    //            CGFloat rectY = cellHeight * y;
-    //
-    //            CGRect cellRect = CGRectMake(rectX, rectY, cellWidth, cellHeight);
-    ////            CGContextFillEllipseInRect(context, cellRect);
-    //            CGContextFillRect(context, cellRect);
-    //        }
-    //    }
-    
+    CGContextSetRGBFillColor(context, 0, 0, 0, 1.0);
+    CGContextFillRect(context, self.bounds);
     
     for(VWWGOLCell *cell in [self.life.cells allValues]){
         [cell.color getRed:&red green:&green blue:&blue alpha:&alpha];
@@ -93,21 +75,17 @@
 
 
 -(void)mouseEvent:(NSEvent *)theEvent{
-//    NSArray *touchesArray = [touches allObjects];
-//    UITouch* touch = touchesArray[0];
     
     NSPoint mousePos = [theEvent locationInWindow];
-    
-    
-    //CGPoint begin = [touch locationInView:self];
-    
-    
     
     CGFloat cellWidth = self.bounds.size.width / self.life.width;
     CGFloat cellHeight = self.bounds.size.height / self.life.height;
     
     NSInteger x = mousePos.x / cellWidth;
     NSInteger y = mousePos.y / cellHeight;
+//    NSLog(@"mousePos.x/y %f/%f self.life.width/height %ld/%ld", mousePos.x, mousePos.y, self.life.width, self.life.height);
+    
+    
     
     [self.delegate cgLifeView:self userTouchedAtX:x andY:y];
     
@@ -117,7 +95,7 @@
     [self mouseEvent:theEvent];
 }
 
-- (void)mouseDown:(NSEvent *)theEvent{
+- (void)mouseDragged:(NSEvent *)theEvent{
     [self mouseEvent:theEvent];
 }
 

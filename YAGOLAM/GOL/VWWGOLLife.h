@@ -14,6 +14,7 @@
 
 @protocol VWWGOLLifeDelegate <NSObject>
 -(void)renderCells;
+-(void)cellsThatDiedCount:(NSInteger)diedCellCount cellsBornCount:(NSInteger)cellBornCount;
 @end
 
 
