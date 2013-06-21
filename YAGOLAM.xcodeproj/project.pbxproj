@@ -17,7 +17,15 @@
 		C62355B217740D14008E20FA /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62355B117740D14008E20FA /* SenTestingKit.framework */; };
 		C62355B317740D14008E20FA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C623559017740D14008E20FA /* Cocoa.framework */; };
 		C62355BB17740D14008E20FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C62355B917740D14008E20FA /* InfoPlist.strings */; };
-		C62355BE17740D14008E20FA /* YAGOLAMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C62355BD17740D14008E20FA /* YAGOLAMTests.m */; };
+		C62355CC17740D5A008E20FA /* VWWGOLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C62355C917740D5A008E20FA /* VWWGOLCell.m */; };
+		C62355CD17740D5A008E20FA /* VWWGOLLife.m in Sources */ = {isa = PBXBuildFile; fileRef = C62355CB17740D5A008E20FA /* VWWGOLLife.m */; };
+		C62355D617740DA3008E20FA /* VWWGOLLifeRule1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C62355CF17740DA3008E20FA /* VWWGOLLifeRule1Tests.m */; };
+		C62355D717740DA3008E20FA /* VWWGOLLIfeRule2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C62355D117740DA3008E20FA /* VWWGOLLIfeRule2Tests.m */; };
+		C62355D817740DA3008E20FA /* VWWGOLLifeRule3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C62355D317740DA3008E20FA /* VWWGOLLifeRule3Tests.m */; };
+		C62355D917740DA3008E20FA /* VWWGOLLifeRule4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C62355D517740DA3008E20FA /* VWWGOLLifeRule4Tests.m */; };
+		C62355DD1774100A008E20FA /* VWWCGLifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C62355DB1774100A008E20FA /* VWWCGLifeViewController.m */; };
+		C62355DE1774100A008E20FA /* VWWCGLifeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62355DC1774100A008E20FA /* VWWCGLifeViewController.xib */; };
+		C62355E11774103D008E20FA /* VWWCGLifeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C62355E01774103D008E20FA /* VWWCGLifeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +57,23 @@
 		C62355B117740D14008E20FA /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		C62355B817740D14008E20FA /* YAGOLAMTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YAGOLAMTests-Info.plist"; sourceTree = "<group>"; };
 		C62355BA17740D14008E20FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C62355BC17740D14008E20FA /* YAGOLAMTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YAGOLAMTests.h; sourceTree = "<group>"; };
-		C62355BD17740D14008E20FA /* YAGOLAMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YAGOLAMTests.m; sourceTree = "<group>"; };
+		C62355C817740D5A008E20FA /* VWWGOLCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLCell.h; sourceTree = "<group>"; };
+		C62355C917740D5A008E20FA /* VWWGOLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLCell.m; sourceTree = "<group>"; };
+		C62355CA17740D5A008E20FA /* VWWGOLLife.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLife.h; sourceTree = "<group>"; };
+		C62355CB17740D5A008E20FA /* VWWGOLLife.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLife.m; sourceTree = "<group>"; };
+		C62355CE17740DA3008E20FA /* VWWGOLLifeRule1Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeRule1Tests.h; sourceTree = "<group>"; };
+		C62355CF17740DA3008E20FA /* VWWGOLLifeRule1Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLifeRule1Tests.m; sourceTree = "<group>"; };
+		C62355D017740DA3008E20FA /* VWWGOLLifeRule2Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeRule2Tests.h; sourceTree = "<group>"; };
+		C62355D117740DA3008E20FA /* VWWGOLLIfeRule2Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLIfeRule2Tests.m; sourceTree = "<group>"; };
+		C62355D217740DA3008E20FA /* VWWGOLLifeRule3Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeRule3Tests.h; sourceTree = "<group>"; };
+		C62355D317740DA3008E20FA /* VWWGOLLifeRule3Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLifeRule3Tests.m; sourceTree = "<group>"; };
+		C62355D417740DA3008E20FA /* VWWGOLLifeRule4Tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGOLLifeRule4Tests.h; sourceTree = "<group>"; };
+		C62355D517740DA3008E20FA /* VWWGOLLifeRule4Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGOLLifeRule4Tests.m; sourceTree = "<group>"; };
+		C62355DA17741009008E20FA /* VWWCGLifeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWCGLifeViewController.h; path = YAGOLAM/VWWCGLifeViewController.h; sourceTree = SOURCE_ROOT; };
+		C62355DB1774100A008E20FA /* VWWCGLifeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWCGLifeViewController.m; path = YAGOLAM/VWWCGLifeViewController.m; sourceTree = SOURCE_ROOT; };
+		C62355DC1774100A008E20FA /* VWWCGLifeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VWWCGLifeViewController.xib; path = YAGOLAM/VWWCGLifeViewController.xib; sourceTree = SOURCE_ROOT; };
+		C62355DF1774103D008E20FA /* VWWCGLifeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWCGLifeView.h; path = YAGOLAM/VWWCGLifeView.h; sourceTree = SOURCE_ROOT; };
+		C62355E01774103D008E20FA /* VWWCGLifeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWCGLifeView.m; path = YAGOLAM/VWWCGLifeView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +139,14 @@
 		C623559617740D14008E20FA /* YAGOLAM */ = {
 			isa = PBXGroup;
 			children = (
+				C62355C717740D5A008E20FA /* GOL */,
 				C62355A217740D14008E20FA /* VWWAppDelegate.h */,
 				C62355A317740D14008E20FA /* VWWAppDelegate.m */,
+				C62355DA17741009008E20FA /* VWWCGLifeViewController.h */,
+				C62355DB1774100A008E20FA /* VWWCGLifeViewController.m */,
+				C62355DC1774100A008E20FA /* VWWCGLifeViewController.xib */,
+				C62355DF1774103D008E20FA /* VWWCGLifeView.h */,
+				C62355E01774103D008E20FA /* VWWCGLifeView.m */,
 				C62355A517740D14008E20FA /* MainMenu.xib */,
 				C62355A817740D14008E20FA /* YAGOLAM.xcdatamodeld */,
 				C623559717740D14008E20FA /* Supporting Files */,
@@ -140,8 +169,14 @@
 		C62355B617740D14008E20FA /* YAGOLAMTests */ = {
 			isa = PBXGroup;
 			children = (
-				C62355BC17740D14008E20FA /* YAGOLAMTests.h */,
-				C62355BD17740D14008E20FA /* YAGOLAMTests.m */,
+				C62355CE17740DA3008E20FA /* VWWGOLLifeRule1Tests.h */,
+				C62355CF17740DA3008E20FA /* VWWGOLLifeRule1Tests.m */,
+				C62355D017740DA3008E20FA /* VWWGOLLifeRule2Tests.h */,
+				C62355D117740DA3008E20FA /* VWWGOLLIfeRule2Tests.m */,
+				C62355D217740DA3008E20FA /* VWWGOLLifeRule3Tests.h */,
+				C62355D317740DA3008E20FA /* VWWGOLLifeRule3Tests.m */,
+				C62355D417740DA3008E20FA /* VWWGOLLifeRule4Tests.h */,
+				C62355D517740DA3008E20FA /* VWWGOLLifeRule4Tests.m */,
 				C62355B717740D14008E20FA /* Supporting Files */,
 			);
 			path = YAGOLAMTests;
@@ -154,6 +189,17 @@
 				C62355B917740D14008E20FA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C62355C717740D5A008E20FA /* GOL */ = {
+			isa = PBXGroup;
+			children = (
+				C62355C817740D5A008E20FA /* VWWGOLCell.h */,
+				C62355C917740D5A008E20FA /* VWWGOLCell.m */,
+				C62355CA17740D5A008E20FA /* VWWGOLLife.h */,
+				C62355CB17740D5A008E20FA /* VWWGOLLife.m */,
+			);
+			path = GOL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +277,7 @@
 				C623559B17740D14008E20FA /* InfoPlist.strings in Resources */,
 				C62355A117740D14008E20FA /* Credits.rtf in Resources */,
 				C62355A717740D14008E20FA /* MainMenu.xib in Resources */,
+				C62355DE1774100A008E20FA /* VWWCGLifeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +315,10 @@
 				C623559D17740D14008E20FA /* main.m in Sources */,
 				C62355A417740D14008E20FA /* VWWAppDelegate.m in Sources */,
 				C62355AA17740D14008E20FA /* YAGOLAM.xcdatamodeld in Sources */,
+				C62355CC17740D5A008E20FA /* VWWGOLCell.m in Sources */,
+				C62355CD17740D5A008E20FA /* VWWGOLLife.m in Sources */,
+				C62355DD1774100A008E20FA /* VWWCGLifeViewController.m in Sources */,
+				C62355E11774103D008E20FA /* VWWCGLifeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +326,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C62355BE17740D14008E20FA /* YAGOLAMTests.m in Sources */,
+				C62355D617740DA3008E20FA /* VWWGOLLifeRule1Tests.m in Sources */,
+				C62355D717740DA3008E20FA /* VWWGOLLIfeRule2Tests.m in Sources */,
+				C62355D817740DA3008E20FA /* VWWGOLLifeRule3Tests.m in Sources */,
+				C62355D917740DA3008E20FA /* VWWGOLLifeRule4Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +406,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -379,7 +433,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -391,6 +445,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YAGOLAM/YAGOLAM-Prefix.pch";
 				INFOPLIST_FILE = "YAGOLAM/YAGOLAM-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -403,6 +458,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YAGOLAM/YAGOLAM-Prefix.pch";
 				INFOPLIST_FILE = "YAGOLAM/YAGOLAM-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -417,6 +473,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YAGOLAM/YAGOLAM-Prefix.pch";
 				INFOPLIST_FILE = "YAGOLAMTests/YAGOLAMTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -432,6 +489,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YAGOLAM/YAGOLAM-Prefix.pch";
 				INFOPLIST_FILE = "YAGOLAMTests/YAGOLAMTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -457,6 +515,7 @@
 				C62355C317740D14008E20FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C62355C417740D14008E20FA /* Build configuration list for PBXNativeTarget "YAGOLAMTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +524,7 @@
 				C62355C617740D14008E20FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

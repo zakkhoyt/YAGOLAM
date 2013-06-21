@@ -7,6 +7,11 @@
 //
 
 #import "VWWAppDelegate.h"
+#import "VWWCGLifeViewController.h"
+
+@interface VWWAppDelegate ()
+@property (strong) VWWCGLifeViewController *golViewController;
+@end
 
 @implementation VWWAppDelegate
 
@@ -16,7 +21,30 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+//    NSArray *screenArray = [NSScreen screens];
+//    NSScreen *screen = screenArray[0];
+//    NSRect screenFrame = [screen visibleFrame];
+//    [self.window setFrame:screenFrame display:YES];
+    
+//    self.window.delegate = self;
+    
+    
+    self.golViewController = [[VWWCGLifeViewController alloc]initWithNibName:@"VWWCGLifeViewController" bundle:nil];
+    [self.window.contentView addSubview:self.golViewController.view];
+    NSRect bounds = ((NSView*)self.window.contentView).bounds;
+    self.golViewController.view.frame = bounds;
+    
+//    self.mapViewController = [[VWWMapViewController alloc]initWithNibName:@"VWWMapViewController" bundle:nil];
+//    self.mapViewController.delegate = self;
+//    [self.window.contentView addSubview:self.mapViewController.view];
+//    self.mapViewController.view.frame = [self topRight];
+//    
+//    self.exifViewController = [[VWWPhotoTagsViewController alloc]initWithNibName:@"VWWPhotoTagsViewController" bundle:nil];
+//    [self.window.contentView addSubview:self.exifViewController.view];
+//    self.exifViewController.view.frame = [self bottomRight];
+    
+    [NSApp activateIgnoringOtherApps:YES];
+    
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.vaporwarewolf.YAGOLAM" in the user's Application Support directory.
